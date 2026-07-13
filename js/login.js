@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const hash = await sha256(password);
             const result = await App.apiCall({
-                action: 'loginUser',
+                action: 'login',
                 name: name,
                 password: hash
             });
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const hash = await sha256(password);
             const result = await App.apiCall({
-                action: 'registerUser',
+                action: 'register',
                 team: team,
                 name: name,
                 role: role,
