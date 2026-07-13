@@ -1,0 +1,37 @@
+{
+  "name": "onoff-monitor",
+  "version": "1.0.35",
+  "description": "PC Auto Boot/Shutdown Monitor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Antigravity",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.fitsociety.onoff",
+    "productName": "출퇴근기록앱",
+    "win": {
+      "target": "nsis",
+      "certificateFile": "cert.pfx",
+      "certificatePassword": "1234",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "출퇴근기록앱",
+      "include": "build/installer.nsh"
+    }
+  }
+}
